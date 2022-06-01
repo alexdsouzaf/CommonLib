@@ -9,24 +9,11 @@
         /// <returns></returns>
         public static async Task<char> DecodeAscii(this Task<int> i) => await Task.Run(async () => Convert.ToChar(await i));
 
-        #region[CONVERT TO INT32]
 
-        public static int ToInt(this decimal num) => Convert.ToInt32(num);
+        public static int ToInt32<T>(this T num) => Convert.ToInt32(num);
 
-        public static int ToInt(this string num) => Convert.ToInt32(num);
+        public static short ToInt16<T>(this T num) => Convert.ToInt16(num);
 
-        #endregion
-
-        #region[CONVERT TO INT16]]
-
-        public static short ToShort(this string num) => Convert.ToInt16(num);
-
-        #endregion
-
-
-        #region[CONVERT TO INT64]
-        public static long ToLong(this string num) => Convert.ToInt64(num);
-
-        #endregion
+        public static long ToInt64<T>(this T num) => Convert.ToInt64(num);
     }
 }
